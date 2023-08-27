@@ -8,62 +8,72 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red[200],
-      appBar: AppBar(
-        backgroundColor: Colors.red[300],
-        elevation: 0,
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const Padding(
-            padding: EdgeInsets.fromLTRB(40.0, 100.0, 25.0, 180.0),
-            child: Text(
-              'LAWAA',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 60),
-            ),
-          ),
-          Center(
-            child: ElevatedButton(
-              
-              style: ElevatedButton.styleFrom(
-                
-                backgroundColor: Colors.red[600]
-                ,fixedSize: const Size.fromWidth(300.0)
-              ),
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (BuildContext context) {
-                    return const RegisterPage();
-                  }),
-                );
-              },
-              child: const Text('Register',style: TextStyle(color: Colors.black
-              ,fontWeight: FontWeight.bold,fontSize: 20.0),),
-            ),
-          ),
-          const SizedBox(height: 15.0,),
-          Center(
-            child: ElevatedButton(
-              
-                style: ElevatedButton.styleFrom(
-                  
-                  backgroundColor: Colors.red[50]
-                  ,fixedSize: const Size.fromWidth(300.0)
+        backgroundColor: Colors.white,
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Padding(
+                padding: EdgeInsets.fromLTRB(40.0, 300.0, 25.0, 30.0),
+                child: Text(
+                  'IKON',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 55,
+                      color: Colors.pinkAccent),
                 ),
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (BuildContext context) {
-                    return const LogPage();
-                  }),
-                );
-              },
-              child: const Text('Log in',style: TextStyle(color: Colors.black
-              ,fontWeight: FontWeight.bold,fontSize: 20.0)),
-            ),
+              ),
+              Center(
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.redAccent[100],
+                      fixedSize: const Size.fromWidth(300.0)),
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (BuildContext context) {
+                        return const RegisterPage();
+                      }),
+                    );
+                  },
+                  child: const Text(
+                    'Daftar',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.normal,
+                        fontSize: 20.0),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 15.0,
+              ),
+              Center(
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.pink[50],
+                      fixedSize: const Size.fromWidth(300.0)),
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (BuildContext context) {
+                        return const LogPage();
+                      }),
+                    );
+                  },
+                  child: const Text('Log masuk',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.normal,
+                          fontSize: 20.0)),
+                ),
+              ),
+            const SizedBox(height: 135),
+            
+             Image.asset("lib/images/ikon logo.png",width: 180,height: 180,),
+            ],
+            
           ),
-        ],
-      ),
-    );
+        ),
+      );
+    
   }
 }
